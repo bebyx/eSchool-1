@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+
 pipeline {
     agent any
 
@@ -22,6 +24,7 @@ pipeline {
                 success {
                 //    junit '**/target/surefire-reports/TEST-*.xml'
                     archiveArtifacts 'target/*.jar'
+                    sh 'scp -o "StrictHostKeyChecking=no" target/*.jar bebyx@10.156.0.11:/home/bebyx/CI/'
                 }
             }
         }
