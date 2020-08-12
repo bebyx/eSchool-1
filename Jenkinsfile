@@ -9,9 +9,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Get some code from a GitHub repository
-                git 'https://github.com/bebyx/eschool-jen.git'
-
                 // Run Maven on a Unix agent.
                 sh "mvn clean package -DskipTests"
 
