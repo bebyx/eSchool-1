@@ -25,6 +25,7 @@ pipeline {
                 //    junit '**/target/surefire-reports/TEST-*.xml'
                     archiveArtifacts 'target/*.jar'
                     sh 'scp -o "StrictHostKeyChecking=no" target/*.jar bebyx@10.156.0.11:/home/bebyx/CI/'
+                    sh 'scp -o "StrictHostKeyChecking=no" target/*.jar bebyx@10.156.0.12:/home/bebyx/CI/'
                 }
             }
         }
